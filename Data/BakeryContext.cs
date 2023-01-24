@@ -10,5 +10,11 @@ namespace Bakery.Data
         {
             optionsBuilder.UseSqlite(@"Data source=Bakery.db");
         }
+
+          
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+       modelBuilder.ApplyConfiguration(new ProductConfiguration()).Seed();
+        }
     }
 }
